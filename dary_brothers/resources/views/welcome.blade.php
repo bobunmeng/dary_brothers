@@ -10,6 +10,8 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
+        <link href="/css/app.css" rel="stylesheet">
+
         <!-- Styles -->
         <style>
             html, body {
@@ -91,5 +93,6 @@
                 </div>
             </div>
         </div>
+
     </body>
 </html>
