@@ -12,5 +12,15 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/home');
+});
+
+Route::get('/home', function () {
+  return view('homepage');
+});
+
+Route::get('/products', 'ProductsController@index');
+
+Route::get('/shop', function () {
+  return "this is shop haha";
 });

@@ -2,16 +2,19 @@
 <html>
   <head>
     <link href="/css/app.css" rel="stylesheet">
+    <script src="/js/app.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
     <style>
-
-      #container {
-        align-items: center;
-      }
 
       #nav_container {
         align-items: flex-end;
         padding: 10px;
+      }
+
+      #account_container {
+        text-align: center;
+        margin-bottom: 30px;
       }
 
     </style>
@@ -23,19 +26,19 @@
           <img src="/storage/sample_mcdonald.jpg" alt="Shop Logo" width="150" height="150" />
         </div>
         <div class="d-inline-block" id="nav_container">
-          <div>
-            Create Acount / Login
+          <div id="account_container">
+            <a href="#">Create Account</a> / <a href="#">Log In</a>
           </div>
           <div>
-            <ul class="nav nav-pills nav-fill">
+            <ul class="nav">
               <li class="nav-item">
-                <a class="nav-link active" href="#">HOME</a>
+                <a class="nav-link" href="/home">HOME</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">PRODUCT</a>
+                <a class="nav-link" href="/products">PRODUCTS</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">OUR SHOP</a>
+                <a class="nav-link" href="/shop">OUR SHOP</a>
               </li>
             </ul>
           </div>
