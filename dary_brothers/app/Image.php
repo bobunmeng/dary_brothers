@@ -9,7 +9,7 @@ class Image extends Model
     public $timestamp = false;
 
     public function getImages() {
-      
+
     }
 
 }
