@@ -27,7 +27,12 @@
         </div>
         <div class="d-inline-block" id="nav_container">
           <div id="account_container">
-            <a href="#">Create Account</a> / <a href="#">Log In</a>
+            @if (empty($isLoggedIn))
+              <a href="/account/create_form">Create Account</a> / <a href="#">Log In</a>
+            @elseif ($isLoggedIn == true)
+              <a href="#">{{ $email }}</a> / <a href="/account/log_out">
+          <span class="glyphicon glyphicon-log-out"></span> Log out</a>
+            @endif
           </div>
           <div>
             <ul class="nav">
