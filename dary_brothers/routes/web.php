@@ -21,6 +21,4 @@ Route::get('/home', function () {
 
 Route::get('/products', 'ProductsController@index');
 
-Route::get('/shop', function () {
-  return "this is shop haha";
-});
+Route::get('/shop', 'ShopController@index');
