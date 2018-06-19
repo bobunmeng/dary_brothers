@@ -21,10 +21,6 @@ Route::get('/home', function () {
 
 Route::get('/products', 'ProductsController@index');
 
-Route::get('/shop', function () {
-  return "this is shop haha";
-});
-
 Route::get('/account/create_form', function () {
   return view('account.profile_create');
 });
@@ -32,3 +28,4 @@ Route::get('/account/create_form', function () {
 Route::post('/account/create', 'ProfileController@create_user');
 
 Route::get('/account/log_out', 'ProfileController@logout_user');
+Route::get('/shop', 'ShopController@index');
