@@ -27,10 +27,10 @@
         </div>
         <div class="d-inline-block" id="nav_container">
           <div id="account_container">
-            @if (empty($isLoggedIn))
-              <a href="/account/create_form">Create Account</a> / <a href="#">Log In</a>
-            @elseif ($isLoggedIn == true)
-              <a href="#">{{ $email }}</a> / <a href="/account/log_out">
+            @if (empty($email))
+              <a href="/account/create_form">Create Account</a> / <a href="/account/login_user">Log In</a>
+            @else
+              <a href="#">{{ $email }}</a> / <a href="#"> <span class="glyphicon glyphicon-shopping-cart"></span> My Cart</a> /  <a href="/account/log_out">
           <span class="glyphicon glyphicon-log-out"></span> Log out</a>
             @endif
           </div>

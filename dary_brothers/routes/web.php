@@ -15,9 +15,7 @@ Route::get('/', function () {
     return redirect('/home');
 });
 
-Route::get('/home', function () {
-  return view('homepage');
-});
+Route::get('/home', 'HomeController@index');
 
 Route::get('/products', 'ProductsController@index');
 
@@ -27,5 +25,14 @@ Route::get('/account/create_form', function () {
 
 Route::post('/account/create', 'ProfileController@create_user');
 
-Route::get('/account/log_out', 'ProfileController@logout_user');
+Route::get('/account/log_out', 'Auth\LoginController@logout');
+
 Route::get('/shop', 'ShopController@index');
+
+Route::get('/account/login_user', function () {
+  return view('auth.login');
+});
+
+Route::post('/account/login', 'Auth\LoginController@login');
+
+Auth::routes();
