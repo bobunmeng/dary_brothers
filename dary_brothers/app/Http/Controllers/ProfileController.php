@@ -18,7 +18,7 @@ class ProfileController extends RegisterController
           $user = User::where('email', $email)->first();
           session(['CUSTOMER_USER_ID' => $user->id]);
           if (Auth::attempt($data)) {
-              return view('account.profile_edit', ['isLoggedIn' => true, 'email' => $email]);
+              return view('account.profile_edit', ['email' => $email]);
           }
           return ('F');
       }
