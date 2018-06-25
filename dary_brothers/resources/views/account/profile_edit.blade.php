@@ -10,12 +10,12 @@
   <style>
   form {
     margin-top: 30px;
-  }
+}
 
-  #gender {
+#gender {
     height: 35px;
-  }
-  .avatar-upload {
+}
+.avatar-upload {
     position: relative;
     max-width: 205px;
     margin: 50px auto;
@@ -56,204 +56,205 @@
             }
         }
     }
-  }
-    .avatar-preview {
-        width: 192px;
-        height: 192px;
-        position: relative;
+}
+#imagePreview {
+    width: 192px;
+    height: 192px;
+    position: relative;
+    border-radius: 100%;
+    border: 6px solid #F8F8F8;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+    > div {
+        width: 100%;
+        height: 100%;
         border-radius: 100%;
-        border: 6px solid #F8F8F8;
-        box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
-        > div {
-            width: 100%;
-            height: 100%;
-            border-radius: 100%;
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-        }
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
     }
-  </style>
+}
+</style>
 
-  <script>
+<script>
   $(document).ready(function(){
-		$flag=1;
-    	$("#myName").focusout(function(){
-    		if($(this).val()==''){
-        		$(this).css("border-color", "#FF0000");
-        			$('#submit').attr('disabled',true);
-        			 $("#error_name").text("* You have to enter your first name!");
-        	}
-        	else
-        	{
-        		$(this).css("border-color", "#2eb82e");
-        		$('#submit').attr('disabled',false);
-        		$("#error_name").text("");
+//       $flag=1;
+//       $("#myName").focusout(function(){
+//           if($(this).val()==''){
+//               $(this).css("border-color", "#FF0000");
+//               $('#submit').attr('disabled',true);
+//               $("#error_name").text("* You have to enter your first name!");
+//           }
+//           else
+//           {
+//               $(this).css("border-color", "#2eb82e");
+//               $('#submit').attr('disabled',false);
+//               $("#error_name").text("");
 
-        	}
-       });
-        $("#lastname").focusout(function(){
-    		if($(this).val()==''){
-        		$(this).css("border-color", "#FF0000");
-        			$('#submit').attr('disabled',true);
-        			$("#error_lastname").text("* You have to enter your Last name!");
-        	}
-        	else
-        	{
-        		$(this).css("border-color", "#2eb82e");
-        		$('#submit').attr('disabled',false);
-        		$("#error_lastname").text("");
-        	}
-       });
-        $("#gender").focusout(function(){
-        	$(this).css("border-color", "#2eb82e");
+//           }
+//       });
+//       $("#lastname").focusout(function(){
+//           if($(this).val()==''){
+//               $(this).css("border-color", "#FF0000");
+//               $('#submit').attr('disabled',true);
+//               $("#error_lastname").text("* You have to enter your Last name!");
+//           }
+//           else
+//           {
+//               $(this).css("border-color", "#2eb82e");
+//               $('#submit').attr('disabled',false);
+//               $("#error_lastname").text("");
+//           }
+//       });
+//       $("#gender").focusout(function(){
+//        $(this).css("border-color", "#2eb82e");
 
-       });
-        $("#age").focusout(function(){
-    		if($(this).val()==''){
-        		$(this).css("border-color", "#FF0000");
-        			$('#submit').attr('disabled',true);
-        			$("#error_age").text("* You have to enter your Age!");
-        	}
-        	else
-        	{
-        		$(this).css({"border-color":"#2eb82e"});
-        		$('#submit').attr('disabled',false);
-        		$("#error_age").text("");
+//    });
+//       $("#age").focusout(function(){
+//           if($(this).val()==''){
+//               $(this).css("border-color", "#FF0000");
+//               $('#submit').attr('disabled',true);
+//               $("#error_age").text("* You have to enter your Age!");
+//           }
+//           else
+//           {
+//               $(this).css({"border-color":"#2eb82e"});
+//               $('#submit').attr('disabled',false);
+//               $("#error_age").text("");
 
-        	}
-        	});
-        $("#phone").focusout(function(){
-            $pho =$("#phone").val();
-    		if($(this).val()==''){
-        		$(this).css("border-color", "#FF0000");
-        			$('#submit').attr('disabled',true);
-        			$("#error_phone").text("* You have to enter your Phone Number!");
-        	}
-        	else if ($pho.length!=9)
-        	{
-              $(this).css("border-color", "#FF0000");
-        			$('#submit').attr('disabled',true);
-        			$("#error_phone").text("* Lenght of Phone Number Should Be Nine");
-        	}
-        	else if(!$.isNumeric($pho))
-        	{
-        	        $(this).css("border-color", "#FF0000");
-        			$('#submit').attr('disabled',true);
-        			$("#error_phone").text("* Phone Number Should Be Numeric");
-        	}
-        	else{
-        		$(this).css({"border-color":"#2eb82e"});
-        		$('#submit').attr('disabled',false);
-        		$("#error_phone").text("");
-        	}
+//           }
+//       });
+//       $("#phone").focusout(function(){
+//         $pho =$("#phone").val();
+//         if($(this).val()==''){
+//           $(this).css("border-color", "#FF0000");
+//           $('#submit').attr('disabled',true);
+//           $("#error_phone").text("* You have to enter your Phone Number!");
+//       }
+//       else if ($pho.length!=9)
+//       {
+//           $(this).css("border-color", "#FF0000");
+//           $('#submit').attr('disabled',true);
+//           $("#error_phone").text("* Lenght of Phone Number Should Be Nine");
+//       }
+//       else if(!$.isNumeric($pho))
+//       {
+//        $(this).css("border-color", "#FF0000");
+//        $('#submit').attr('disabled',true);
+//        $("#error_phone").text("* Phone Number Should Be Numeric");
+//    }
+//    else{
+//       $(this).css({"border-color":"#2eb82e"});
+//       $('#submit').attr('disabled',false);
+//       $("#error_phone").text("");
+//   }
 
-    	});
+// });
 
-   		$( "#submit" ).click(function() {
-   			if($("#myName" ).val()=='')
-   			{
-        		$("#myName").css("border-color", "#FF0000");
-        			$('#submit').attr('disabled',true);
-        			 $("#error_name").text("* You have to enter your first name!");
-        	}
-        	if($("#lastname" ).val()=='')
-   			{
-        		$("#lastname").css("border-color", "#FF0000");
-        			$('#submit').attr('disabled',true);
-        			 $("#error_lastname").text("* You have to enter your Last name!");
-        	}
-   			if($("#age" ).val()=='')
-   			{
-        		$("#age").css("border-color", "#FF0000");
-        			$('#submit').attr('disabled',true);
-        			 $("#error_age").text("* You have to enter your Age!");
-        	}
-        	if($("#phone" ).val()=='')
-   			{
-        		$("#phone").css("border-color", "#FF0000");
-        			$('#submit').attr('disabled',true);
-        			 $("#error_phone").text("* You have to enter your Phone Number!");
-        	}
-			});
+//       $( "#submit" ).click(function() {
+//           if($("#myName" ).val()=='')
+//           {
+//               $("#myName").css("border-color", "#FF0000");
+//               $('#submit').attr('disabled',true);
+//               $("#error_name").text("* You have to enter your first name!");
+//           }
+//           if($("#lastname" ).val()=='')
+//           {
+//               $("#lastname").css("border-color", "#FF0000");
+//               $('#submit').attr('disabled',true);
+//               $("#error_lastname").text("* You have to enter your Last name!");
+//           }
+//           if($("#age" ).val()=='')
+//           {
+//               $("#age").css("border-color", "#FF0000");
+//               $('#submit').attr('disabled',true);
+//               $("#error_age").text("* You have to enter your Age!");
+//           }
+//           if($("#phone" ).val()=='')
+//           {
+//               $("#phone").css("border-color", "#FF0000");
+//               $('#submit').attr('disabled',true);
+//               $("#error_phone").text("* You have to enter your Phone Number!");
+//           }
+//       });
       function readURL(input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
-            reader.onload = function(e) {
-                $('#imagePreview').css('background-image', 'url('+e.target.result +')');
-                $('#imagePreview').hide();
-                $('#imagePreview').fadeIn(650);
+
+            reader.onload = function (e) {
+                $('#imagePreview').attr('src', e.target.result);
+                $('#imageAvatar').val(e.target.result);
             }
+
             reader.readAsDataURL(input.files[0]);
         }
-      }
-      $("#imageUpload").change(function() {
+    }
+    $("#imageUpload").change(function() {
         readURL(this);
-      });
-	});
+    });
+});
 
-  </script>
+</script>
 
 </head>
 <body>
   <div class="row">
     <div class="col-md-6 col-sm-12 col-lg-6 col-md-offset-3">
-			<form name="myform">
-				<div>
+     <form name="myform" method="POST" action="/account/create_user_detail" enctype="multipart/form-data">
+        @csrf
+
+        <div>
           <div>
             <div class="avatar-upload">
-        <div class="avatar-edit">
-            <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
-            <label for="imageUpload"></label>
-        </div>
-        <div class="avatar-preview">
-            <div id="imagePreview" style="background-image: url(http://i.pravatar.cc/500?img=7);">
+                <div class="avatar-edit">
+                    <input type='file' id="imageUpload" name="imageAvatar" accept=".png, .jpg, .jpeg" />
+                    <label for="imageUpload"></label>
+                </div>
+                <img id="imagePreview" class="img-thumbnail" src="/storage/avatar.png" />
+                <input type="hidden" id="imageAvatar" />
             </div>
         </div>
-    </div>
-          </div>
-          <div>
+        <div>
             <div class="form-group">
-    					<label for="myName">First Name *</label>
-    					<input id="myName" name="myName" class="form-control" type="text" data-validation="required">
-    					<span id="error_name" class="text-danger"></span>
-    				</div>
-    				<div class="form-group">
-    					<label for="lastname">Last Name *</label>
-    					<input id="lastname" name="lastname" class="form-control" type="text" data-validation="email">
-    					<span id="error_lastname" class="text-danger"></span>
-    				</div>
-          </div>
-        </div>
-				<div class="form-group">
-					<label for="age">Age *</label>
-					<input id="age" name="age"  class="form-control" type="number" min="1" >
-					<span id="error_age" class="text-danger"></span>
-				</div>
-				<div class="form-group">
-					<label for="gender">Gender</label>
-					<select name="gender" id="gender" class="form-control">
-						<option selected>Male</option>
-						<option>Female</option>
-						<option>Other</option>
-					</select>
-					<span id="error_gender" class="text-danger"></span>
-				</div>
-				<div class="form-group">
-					<label for="phone">Phone Number *</label>
-					<input type="text" id="phone" name="phone" class="form-control" >
-					<span id="error_phone" class="text-danger"></span>
-				</div>
-				<div class="form-group">
-					<label for="disc">Address</label>
-					<textarea class="form-control" rows="3"></textarea>
-				</div>
+               <label for="myName">First Name *</label>
+               <input id="myName" name="myName" class="form-control" type="text" data-validation="required">
+               <span id="error_name" class="text-danger"></span>
+           </div>
+           <div class="form-group">
+               <label for="lastname">Last Name *</label>
+               <input id="lastname" name="lastname" class="form-control" type="text" data-validation="email">
+               <span id="error_lastname" class="text-danger"></span>
+           </div>
+       </div>
+   </div>
+   <div class="form-group">
+       <label for="age">Age *</label>
+       <input id="age" name="age"  class="form-control" type="number" min="1" >
+       <span id="error_age" class="text-danger"></span>
+   </div>
+   <div class="form-group">
+       <label for="gender">Gender</label>
+       <select name="gender" id="gender" class="form-control">
+          <option selected>Male</option>
+          <option>Female</option>
+          <option>Other</option>
+      </select>
+      <span id="error_gender" class="text-danger"></span>
+  </div>
+  <div class="form-group">
+   <label for="phone">Phone Number *</label>
+   <input type="text" id="phone" name="phone" class="form-control" >
+   <span id="error_phone" class="text-danger"></span>
+</div>
+<div class="form-group">
+   <label for="disc">Address</label>
+   <textarea class="form-control" rows="3"></textarea>
+</div>
 
-				<button id="submit" type="submit" value="submit" class="btn btn-primary center">Save</button>
+<button id="submit" type="submit" value="submit" class="btn btn-primary center">Save</button>
 
-			</form>
-		</div>
-	</div>
+</form>
+</div>
+</div>
 </div>
 </body>
 </html>

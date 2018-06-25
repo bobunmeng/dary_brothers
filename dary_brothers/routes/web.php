@@ -23,7 +23,9 @@ Route::get('/account/create_form', function () {
   return view('account.profile_create');
 });
 
-Route::post('/account/create', 'ProfileController@create_user');
+Route::post('/account/create', 'ProfileController@createUser');
+
+Route::post('/account/create_user_detail', 'ProfileController@createUserDetail');
 
 Route::get('/account/log_out', 'Auth\LoginController@logout');
 
@@ -36,3 +38,7 @@ Route::get('/account/login_user', function () {
 Route::post('/account/login', 'Auth\LoginController@login');
 
 Auth::routes();
+
+Route::get('/test', function() {
+	return view('account.profile_edit');
+});

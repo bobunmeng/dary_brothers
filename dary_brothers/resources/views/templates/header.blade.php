@@ -30,7 +30,7 @@
             @if (empty($email))
               <a href="/account/create_form">Create Account</a> / <a href="/account/login_user">Log In</a>
             @else
-              <a href="#">{{ $email }}</a> / <a href="#"> <span class="glyphicon glyphicon-shopping-cart"></span> My Cart</a> /  <a href="/account/log_out">
+              <a href="#">{{ $email }}</a> / <a href="#"> <span class="glyphicon glyphicon-shopping-cart"></span> My Cart</a> / <a href="/account/log_out">
           <span class="glyphicon glyphicon-log-out"></span> Log out</a>
             @endif
           </div>
