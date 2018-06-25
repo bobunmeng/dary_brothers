@@ -3,31 +3,47 @@
 namespace App\Http\Controllers;
 
 use Auth;
+use App\Customer;
 use App\User;
-use App\Http\Controllers\Auth\RegisterController;
+// use App\Http\Controllers\Auth\RegisterController;
+use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 
-class ProfileController extends RegisterController
+class ProfileController extends Controller //RegisterController
 {
-    public function create_user() {
+    public function createUser() {
       $email = $_POST['email'];
       $password = $_POST['password'];
       $data = array("email" => $email, "password" => $password);
       $result = parent::create($data);
-      if ($result) {
+      if ($result->response) {
           $user = User::where('email', $email)->first();
           session(['CUSTOMER_USER_ID' => $user->id]);
           if (Auth::attempt($data)) {
               return view('account.profile_edit', ['email' => $email]);
           }
-          return ('F');
       }
-
-      return ('Failed');
+      return redirect()->back()->with('alert', 'Create Account Failed! Please try again!');
+    }
+    
+    public function createUserDetail() {
+      $this->uploadImageToStorage($_FILES['imageAvatar']);
+      return ('Success');
+      // $customer = new Customer;
+      // $customer->first_name = $_POST['first_name'];
+      // $customer->last_name = $_POST['last_name'];
+      // $customer->age = $_POST['age'];
+      // $customer->gender = $_POST['gender'];
+      // $customer->phone = $_POST['phone'];
+      // $customer->address = $_POST['address'];
+      // $customer->user_id = 1;
+      // $customer->save();
     }
 
-    public function logout_user() {
-      return ('Log out');
+    private function uploadImageToStorage($photo) {
+      $img = Image::make($photo["tmp_name"]);
+      Storage::put('fileName', $img, 'public');
     }
 
 }
