@@ -5,6 +5,7 @@
 <html>
 <head>
   <title>Products</title>
+
   <style>
     #title-container {
       padding-top: 20px;
@@ -38,6 +39,7 @@
     <div class="row">
       @foreach ($products as $product)
         <div class="card col-xs-12 col-sm-6 col-md-4 col-lg-3">
+          <input type="hidden" id="product_id" value="{{ $product->id }}" />
           @if(count($product->pro_images()) == 1)
             <img class="card-img-top" src="{{ $product->pro_images()[0] }}" alt="{{ $product->title }}" height="200px">
           @else
@@ -56,10 +58,12 @@
             </div>
           </div>
         @endif
-        <div class="card-body">
+        <div class="card-body" onclick="location.href='product_detail/{{ $product->id }}';">
           <h5 class="card-title">{{ $product->title }}</h5>
           <p class="card-text">{{ $product->pro_price() }}</p>
-          <a href="" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span> Add to Cart</a>
+        </div>
+        <div class="d-flex justfiy-content-start" style="margin-bottom: 20px;">
+          <a href="#" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span> Add to Cart</a>
         </div>
       </div>
     @endforeach
