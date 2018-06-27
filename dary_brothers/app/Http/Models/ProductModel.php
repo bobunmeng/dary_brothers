@@ -2,12 +2,16 @@
 
 class ProductModel {
 
+  public $id = 0;
   public $title = "";
+  public $description = "";
   public $image_paths = array();
   public $price = 0;
 
-  public function __construct($title, $image_paths, $price) {
+  public function __construct($id, $title, $description, $image_paths, $price) {
+    $this->id = $id;
     $this->title = $title;
+    $this->description = $description;
     $this->image_paths = $image_paths;
     $this->price = $price;
   }
