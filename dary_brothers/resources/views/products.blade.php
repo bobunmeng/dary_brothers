@@ -6,6 +6,7 @@
 <head>
   <title>Products</title>
 
+  <script src="/js/myCart.js"></script>
   <style>
     #title-container {
       padding-top: 20px;
@@ -62,8 +63,8 @@
           <h5 class="card-title">{{ $product->title }}</h5>
           <p class="card-text">{{ $product->pro_price() }}</p>
         </div>
-        <div class="d-flex justfiy-content-start" style="margin-bottom: 20px;">
-          <a href="#" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span> Add to Cart</a>
+        <div class="d-flex justfiy-content-start" style="margin-bottom: 20px; color: white;">
+          <a class="btn btn-primary" id="add-to-cart{{ $product->id }}" onclick="addToCart('{{ $product->id }}', 'add-to-cart{{ $product->id }}')"><span class="glyphicon glyphicon-shopping-cart"></span> Add to Cart</a>
         </div>
       </div>
     @endforeach

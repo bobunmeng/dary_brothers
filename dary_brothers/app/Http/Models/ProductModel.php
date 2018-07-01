@@ -1,5 +1,6 @@
 <?php namespace App\Http\Models;
 
+use App\Exceptions\Handler;
 class ProductModel {
 
   public $id = 0;
@@ -22,8 +23,11 @@ class ProductModel {
 
   public function pro_images() {
     $img_array = array();
-    foreach ($this->image_paths as $path) {
-      array_push($img_array, "/storage/$path");
+    $imagePathsArray = $this->image_paths;
+    if (is_array($imagePathsArray) || is_object($imagePathsArray)) {
+      foreach ($imagePathsArray as $path) {
+        array_push($img_array, "/storage/$path");
+      }
     }
     return $img_array;
   }

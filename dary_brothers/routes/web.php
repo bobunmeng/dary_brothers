@@ -44,3 +44,11 @@ Auth::routes();
 Route::get('/test', function() {
 	return view('account.profile_edit');
 });
+
+Route::get('/my_cart', 'MyCartController@index');
+
+Route::get('/my_cart_add/{id}/quantity/{quantity}', 'MyCartController@addToCart');
+
+Route::get('/my_cart_edit/{id}/quantity/{quantity}', 'MyCartController@editCartItemQuantity');
+
+Route::get('/my_cart_remove/{id}', 'MyCartController@removeFromCart');

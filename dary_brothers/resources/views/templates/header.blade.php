@@ -3,6 +3,7 @@
   <head>
     <link href="/css/app.css" rel="stylesheet">
     <script src="/js/app.js"></script>
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
     <style>
@@ -30,7 +31,7 @@
             @if (empty($email))
               <a href="/account/create_form">Create Account</a> / <a href="/account/login_user">Log In</a>
             @else
-              <a href="#">{{ $email }}</a> / <a href="#"> <span class="glyphicon glyphicon-shopping-cart"></span> My Cart</a> / <a href="/account/log_out">
+              <a href="#">{{ $email }}</a> / <a href="/account/log_out">
           <span class="glyphicon glyphicon-log-out"></span> Log out</a>
             @endif
           </div>
@@ -44,6 +45,9 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="/shop">OUR SHOP</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/my_cart"> <span class="glyphicon glyphicon-shopping-cart"></span> MY CART</a>
               </li>
             </ul>
           </div>

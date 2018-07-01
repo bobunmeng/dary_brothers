@@ -12,6 +12,8 @@
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
 
+  <script src="/js/myCart.js"></script>
+
 	<style>
 
 		body {
@@ -112,20 +114,6 @@
 			margin-left: 40px;    		
     	}
 
-		.add-to-cart {
-  			background: #ff9f1a;
-  			padding: 1.2em 1.5em;
-  			border: none;
-  			text-transform: UPPERCASE;
-  			font-weight: bold;
-  			color: #fff;
-  			-webkit-transition: background .3s ease;
-          	transition: background .3s ease; }
-
-  		.add-to-cart:hover {
-    		background: #b36800;
-    		color: #fff; }
-
 		.not-available {
   			text-align: center;
   			line-height: 2em; }
@@ -194,10 +182,10 @@
 						<p class="product-description">{{ $product->description }}</p>
 						<h4 class="price">current price: <span>${{ $product->price }}</span></h4>
 						<h5 class="quantity">Quantity:
-							<input type="number" id="quantity" name="quantity" style="height:30px; width:70px;font-size:14pt;" />
+							<input type="number" id="quantity" name="quantity" style="height:30px; width:70px;font-size:14pt; text-align: right;" value="1" />
 						</h5>
-						<div class="action">
-							<button class="add-to-cart btn btn-default" type="button">add to cart</button>
+						<div>
+							<button class="add-to-cart btn btn-primary" type="button" onclick="addToCart('{{ $product->id }}', '')">ADD TO CART</button>
 						</div>
 					</div>
 				</div>
@@ -232,7 +220,7 @@
     		<div class="card-body">
           		<h5 class="card-title">{{ $pro->title }}</h5>
           		<p class="card-text">{{ $pro->pro_price() }}</p>
-          		<a href="" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span> Add to Cart</a>
+          		<a id="add-to-cart{{ $pro->id }}" onclick="addToCart('{{ $pro->id }}', 'add-to-cart{{ $pro->id }}')" class="btn btn-primary" style="color: white;"><span class="glyphicon glyphicon-shopping-cart"></span> Add to Cart</a>
        		</div>
     	</div>
     	@endforeach
