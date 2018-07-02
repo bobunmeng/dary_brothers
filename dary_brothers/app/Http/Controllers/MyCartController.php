@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\MyCart;
 use App\Product;
 use App\User;
 use App\Http\Models\CartModel;
@@ -15,17 +16,24 @@ class MyCartController extends Controller
 		$product = new Product();
 		if (Auth::check()) {
 			$user = User::where('id', Auth::id())->first();
-			return view('my_cart', ['cartProducts' => [], 'email' => $user->email]);
+			$carts = (new MyCart())->getCartListByUserId($user->id);
+			return view('my_cart', ['cartProducts' => $carts, 'email' => $user->email]);
 		}
 		$products = session('MY_CART');
 		return view('my_cart', ["cartProducts" => $products]);
 	}
 
 	public function addToCart(Product $product, $id, $quantity) {
+
+		if (Auth::check()) {
+			(new MyCart())->saveCart(Auth::id(), $id, $quantity);
+			return;
+		}
+
 		$pro = $product->findProduct($id);
 		$myCarts = session('MY_CART');
 
-		$cartModel = new CartModel($pro, $quantity);
+		$cartModel = new CartModel($pro, $quantity, "");
 
 		if (empty($myCarts)) {
 			session(['MY_CART' => [$cartModel]]);
@@ -41,6 +49,10 @@ class MyCartController extends Controller
 	}
 
 	public function editCartItemQuantity($id, $quantity) {
+		if (Auth::check()) {
+			(new MyCart())->updateQuantity(Auth::id(), $id, $quantity);
+			return response()->json(array('newQtyText' => $quantity), 200);
+		}
 		$myCarts = session('MY_CART');
 		$cart = $this->editQuantity($myCarts, $id, $quantity, "edit");
 		if ($cart === false) {
@@ -64,6 +76,11 @@ class MyCartController extends Controller
 	}
 
 	public function removeFromCart($id) {
+		if (Auth::check()) {
+			(new MyCart())->removeCartByCartId(Auth::id(), $id);
+			return;
+		}
+
 		$myCarts = session('MY_CART');
 		foreach ($myCarts as $cart) {
 			if ($cart->id == $id) {

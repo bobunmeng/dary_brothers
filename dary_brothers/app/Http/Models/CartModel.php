@@ -2,10 +2,12 @@
 
 class CartModel extends ProductModel {
 
+	public $cartId = 0;
 	public $quantity = 0;
 
-	public function __construct($product, $qty) {
+	public function __construct($product, $qty, $cartId) {
 		parent::__construct($product->id, $product->title, $product->description, $product->image_paths, $product->price);
+		$this->cartId = $cartId;
 		$this->quantity = $qty;
 	}
 
