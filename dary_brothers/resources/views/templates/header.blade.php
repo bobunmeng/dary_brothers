@@ -1,12 +1,19 @@
 <!doctype html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="/css/app.css" rel="stylesheet">
     <script src="/js/app.js"></script>
-    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <style>
+
+      .nav {
+        font-size: 14pt;
+      }
 
       #nav_container {
         align-items: flex-end;
@@ -14,9 +21,10 @@
       }
 
       #account_container {
-        text-align: center;
         margin-bottom: 30px;
       }
+      
+}
 
     </style>
 
@@ -28,16 +36,27 @@
         </div>
         <div class="d-inline-block" id="nav_container">
           <div id="account_container">
-            @if (empty($email))
-              <a href="/account/create_form">Create Account</a> / <a href="/account/login_user">Log In</a>
-            @else
-              <a href="#">{{ $email }}</a> / <a href="/account/log_out">
-          <span class="glyphicon glyphicon-log-out"></span> Log out</a>
-            @endif
+            <ul class="nav navbar-right"">
+              @if (empty($email))
+                <li class="nav-item">
+                  <a class="nav-link" href="/account/create_form"><span class="glyphicon glyphicon-user"></span> Create Account</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/account/login_user"><span class="glyphicon glyphicon-log-in"></span> Log In</a>
+                </li>
+              @else
+                <li class="nav-item">
+                  <a class ="nav-link" href="#">{{ $email }}</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/account/log_out"><span class="glyphicon glyphicon-log-out"></span> Log out</a>
+                </li>
+              @endif
+            </ul>
           </div>
           <div>
-            <ul class="nav">
-              <li class="nav-item">
+            <ul class="nav navbar-right">
+              <li class="nav-item ">
                 <a class="nav-link" href="/home">HOME</a>
               </li>
               <li class="nav-item">
