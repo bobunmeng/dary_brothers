@@ -25,11 +25,11 @@ class MyCart extends Model
 
     public function saveCart($userId, $proId, $quantity) {
     	$existCartItem = MyCart::where('user_id', $userId)->where('pro_id', $proId)->get();
-    	if (empty($existCartItem)) {
+    	if (count($existCartItem) == 0) {       
     		$cart = new MyCart;
-			$cart->pro_id = $id;
+			$cart->pro_id = $proId;
 			$cart->quantity = $quantity;
-			$cart->user_id = Auth::id();
+			$cart->user_id = $userId;
 
 			$cart->save();
     	} else {

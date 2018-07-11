@@ -27,7 +27,7 @@ class MyCartController extends Controller
 
 		if (Auth::check()) {
 			(new MyCart())->saveCart(Auth::id(), $id, $quantity);
-			return;
+			exit;
 		}
 
 		$pro = $product->findProduct($id);
