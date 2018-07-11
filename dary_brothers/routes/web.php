@@ -19,6 +19,8 @@ Route::get('/home', 'HomeController@index');
 
 Route::get('/products', 'ProductsController@index');
 
+Route::get('/products/{page}', 'ProductsController@toPage');
+
 Route::get('/product_detail/{id}', 'ProductsController@productDetail');
 
 Route::get('/account/create_form', function () {

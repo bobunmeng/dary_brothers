@@ -27,6 +27,12 @@
   </style>
 
   <script>
+    var msg = '{{Session::get('alert')}}';
+    var exist = '{{Session::has('alert')}}';
+    if(exist){
+      alert(msg);
+    }
+
     window.Laravel = <?php echo json_encode([
             'csrfToken' => csrf_token(),
         ]); ?>

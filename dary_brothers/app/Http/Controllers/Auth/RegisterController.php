@@ -63,17 +63,17 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         $existUser = User::where('email', $data['email'])->get();
-        if (empty($existUser)) {
+        if (count($existUser) == 0) {
             $success = User::create([
                 'email' => $data['email'],
                 'password' => Hash::make($data['password']),
             ]);
             if ($success) {
-                return responseMessage(true, 'Successfully Create User!');
+                return $this->responseMessage(true, 'Successfully Create User!');
             }
-            return responseMessage(false, 'Unsuccessfully Create User! Please try again!');
+            return $this->responseMessage(false, 'Unsuccessfully Create User! Please try again!');
         }
-        return responseMessage(false, 'Email already exists!');
+        return $this->responseMessage(false, 'Email already exists!');
     }
 
     private function responseMessage($response, $message) {

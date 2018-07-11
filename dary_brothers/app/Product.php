@@ -21,6 +21,10 @@ class Product extends Model
   		return $products;
   	}
 
+    public function paginationProduct($count) {
+      $pros = Product::paginate($count);
+    }
+
     public function findProduct($id) {
       $pro = Product::where('id', $id)->first();
       $img_array = (new Image())->getImages($pro->images);

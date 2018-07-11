@@ -23,8 +23,6 @@
       #account_container {
         margin-bottom: 30px;
       }
-      
-}
 
     </style>
 
