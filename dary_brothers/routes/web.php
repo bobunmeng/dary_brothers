@@ -54,3 +54,5 @@ Route::get('/my_cart_add/{id}/quantity/{quantity}', 'MyCartController@addToCart'
 Route::get('/my_cart_edit/{id}/quantity/{quantity}', 'MyCartController@editCartItemQuantity');
 
 Route::get('/my_cart_remove/{id}', 'MyCartController@removeFromCart');
+
+Route::get('/my_cart/notify', 'MyCartController@notifyEmail');

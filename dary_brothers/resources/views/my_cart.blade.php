@@ -8,7 +8,11 @@
 <head>
 	<title>My Cart - DaryBrothers</title>
 
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="/js/myCart.js"></script>
+
 	<style>
 	html, body, #text-container {
         height: 100%;
@@ -28,6 +32,13 @@
 	</style>
 
 	<script type="text/javascript">
+
+		$(document).ready(function() {
+			$('#btnSubmitYourOrder').click(function() {
+				orderProducts();
+			});
+		});
+
 		function startEditQuantity(id) {
 			$('#qtyDisplayer' + id).css('display', 'none');
 			$('#qtyEditor' + id).show();
@@ -90,10 +101,65 @@
 		</div>
 		@endforeach
 		<div class="d-flex justify-content-end" style="margin-top: 20px;">
-			<a class="btn btn-primary" style="color: white; font-size: 18pt;">ORDER</a>
+			<a class="btn btn-primary" data-toggle="modal" data-target="#userDetailModal" style="color: white; font-size: 18pt;">ORDER</a>
 		</div>
 	</div>
 	@endif
+
+	<!-- Modal -->
+	<div class="modal fade" id="userDetailModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Please fill in your information</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form name="myform" method="POST">
+						@csrf
+
+						<div>
+							<div class="form-group">
+								<label for="myName">First Name *</label>
+								<input id="myName" name="myName" class="form-control" type="text" data-validation="required">
+								<span id="error_name" class="text-danger"></span>
+							</div>
+							<div class="form-group">
+								<label for="lastname">Last Name *</label>
+								<input id="lastname" name="lastname" class="form-control" type="text" data-validation="email">
+								<span id="error_lastname" class="text-danger"></span>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="gender">Gender</label>
+							<select name="gender" id="gender" class="form-control">
+								<option selected>Male</option>
+								<option>Female</option>
+								<option>Other</option>
+							</select>
+							<span id="error_gender" class="text-danger"></span>
+						</div>
+						<div class="form-group">
+							<label for="phone">Phone Number *</label>
+							<input type="text" id="phone" name="phone" class="form-control" >
+							<span id="error_phone" class="text-danger"></span>
+						</div>
+						<div class="form-group">
+							<label for="disc">Address</label>
+							<textarea class="form-control" rows="3"></textarea>
+						</div>
+
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+					<button type="button" class="btn btn-primary" id="btnSubmitYourOrder">Submit Your Order</button>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
 

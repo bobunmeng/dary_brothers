@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Mail;
 use App\MyCart;
 use App\Product;
 use App\User;
@@ -92,6 +93,14 @@ class MyCartController extends Controller
 				break;
 			}
 		}
+	}
+
+	public function notifyEmail() {
+		// Mail::send(['text'=>'templates.mail'],['name','Sarthak'],function($message) {
+		// 	$message->to('bunmengtest1@gmail.com', 'To Bunmeng')->subject('Test Email');
+		// 	$message->from('noreply@darybrothers.com', 'Dary Brothers');
+		// });
+		return response()->json(array('msg' => 'Products have been placed in order successfully. Thanks! We will contact you soon.'), 200);
 	}
 
 	private function clearSession() {

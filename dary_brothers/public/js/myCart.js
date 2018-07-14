@@ -50,3 +50,15 @@ function editQuantity(id) {
 		}
 	});
 }
+
+function orderProducts() {
+	$.ajax({
+		type: 'GET',
+		url: '/my_cart/notify',
+		data: '_token = <?php echo csrf_token() ?>',
+		success: function(data) {
+			$('#userDetailModal').modal('hide');
+			alert(data.msg);
+		}
+	})
+}
