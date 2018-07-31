@@ -34,7 +34,7 @@
         </div>
         <div class="d-inline-block" id="nav_container">
           <div id="account_container">
-            <ul class="nav navbar-right"">
+            <ul class="nav navbar-right">
               @if (empty($email))
                 <li class="nav-item">
                   <a class="nav-link" href="/account/create_form"><span class="glyphicon glyphicon-user"></span> Create Account</a>
