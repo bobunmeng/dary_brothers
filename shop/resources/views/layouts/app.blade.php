@@ -13,7 +13,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Admin') }}</title>
+    <title>{{ config('app.name', 'Admin') }} :Administrator site</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
@@ -47,13 +47,12 @@
 
                 @include('layouts.breadcrumb')
 
-                <div class="alert alert-danger" role="alert">
-                    <h4 class="alert-heading">Info!</h4>
-                    <p>Alert Body</p>
-                </div>
+                {{--<div class="alert alert-danger" role="alert">--}}
+                {{--<h4 class="alert-heading">Info!</h4>--}}
+                {{--<p>Alert Body</p>--}}
+                {{--</div>--}}
 
                 @yield('content')
-
             </div>
             <!-- END container-fluid -->
 
@@ -88,8 +87,8 @@
 <!-- Counter-Up-->
 <script src="{{ asset('admin/plugins/waypoints/lib/jquery.waypoints.min.js') }}"></script>
 <script src="{{ asset('admin/plugins/counterup/jquery.counterup.min.js') }}"></script>
-
-
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.26.10/dist/sweetalert2.all.min.js"></script>
+@include('sweet::alert')
 @yield('scripts')
 </body>
 </html>

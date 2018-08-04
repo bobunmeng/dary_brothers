@@ -24,7 +24,6 @@ class Category extends Model
         return SlugOptions::create()
             ->generateSlugsFrom('name')
             ->saveSlugsTo('slug')
-            ->slugsShouldBeNoLongerThan(70)
             ->usingLanguage('en')
             ->doNotGenerateSlugsOnUpdate();
     }

@@ -17,4 +17,10 @@ Route::get('/', 'Frontend\HomeController@index')->name('fronted.home');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/admin/home', 'Admin\HomeController@index')->name('admin.home');
+Route::prefix('admin')->name('admin.')->group(function () {
+
+    Route::get('/home', 'Admin\HomeController@index')->name('home');
+
+    Route::resource('categories', 'Admin\CategoryController');
+
+});
