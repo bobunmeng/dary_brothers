@@ -14,4 +14,7 @@
 Auth::routes();
 
 Route::get('/', 'Frontend\HomeController@index')->name('fronted.home');
+
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/admin/home', 'Admin\HomeController@index')->name('admin.home');
