@@ -14,4 +14,5 @@
     {!! Form::checkbox('status', '1', null,['class' => 'custom-control-input', 'id' => 'status']) !!}
     {!! Form::label('status', 'Status', ['class' => 'custom-control-label']) !!}
 </div>
-<button type="submit" class="btn btn-primary">Create</button>
+<button type="submit" class="btn btn-primary">Submit</button>
+<a href="{!! route('admin.categories.index') !!}" class="btn btn-default">Back</a>

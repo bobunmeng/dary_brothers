@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+    @include('vendor.modal.delete')
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
             <div class="card mb-3">
@@ -12,7 +13,8 @@
                     </a>
                 </div>
                 <div class="card-body">
-                    <table class="table table-responsive-xl table-bordered table-hover">
+                    <table class="table table-responsive-xl table-bordered table-hover" data-toggle="dataTable"
+                           data-form="deleteForm">
                         <thead>
                         <tr>
                             <th scope="col">#</th>
@@ -30,16 +32,16 @@
                                 <td>{!! str_limit($category->description,50) !!}</td>
                                 <td>{!! status($category->status) !!}</td>
                                 <td>
-                                    {!! Form::open(['route' => ['admin.categories.destroy', $category->id], 'method' => 'delete']) !!}
                                     <div class='btn-group'>
                                         <a href="{!! route('admin.categories.edit', $category->id) !!}"
                                            class='btn btn-primary'
                                         >
                                             <i class="fa fa-edit"></i>
                                         </a>
-                                        {!! Form::button('<i class="fa fa-trash-o"></i>', ['type' => 'submit', 'class' => 'btn btn-danger']) !!}
+                                        {!! Form::open(['route' => ['admin.categories.destroy', $category->id], 'method' => 'delete', 'class' => 'confirm']) !!}
+                                        {!! Form::button('<i class="fa fa-trash-o"></i>', ['type' => 'submit', 'class' => 'btn btn-danger confirm']) !!}
+                                        {!! Form::close() !!}
                                     </div>
-                                    {!! Form::close() !!}
                                 </td>
                             </tr>
                         @endforeach
@@ -55,13 +57,23 @@
 @section('scripts')
     <script>
       $(document).ready(function () {
-        // data-tables
-        $('#example1').DataTable();
-
-        // counter-up
-        $('.counter').counterUp({
-          delay: 10,
-          time: 600
+        $('button.confirm').on('click', function (e) {
+          e.preventDefault();
+          var self = $(this);
+          swal({
+            title: 'Are you sure?',
+            text: 'Once deleted, you will not be able to recover this imaginary file!',
+            icon: 'warning',
+            buttons: true,
+            dangerMode: true
+          })
+            .then((willDelete) => {
+              if (willDelete) {
+                self.parents('.confirm').submit();
+                return
+              }
+              swal('Your imaginary file is safe!');
+            });
         });
       });
     </script>
