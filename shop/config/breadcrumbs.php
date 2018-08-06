@@ -18,7 +18,7 @@ return [
     |
     */
 
-    'view' => 'breadcrumbs::bootstrap4',
+    'view' => 'vendor/breadcrumbs/bootstrap4',
 
     /*
     |--------------------------------------------------------------------------
@@ -32,7 +32,7 @@ return [
     |
     */
 
-    'files' => base_path('routes/breadcrumbs.php'),
+    'files' => glob(base_path('routes/breadcrumbs/*.php')),
 
     /*
     |--------------------------------------------------------------------------

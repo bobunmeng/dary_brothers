@@ -57,6 +57,10 @@ class CategoryController extends Controller
     public function store(StoreRequest $request)
     {
         $category = new Category($request->all());
+        $category->{'name:en'} = $request->input('en_name');
+        $category->{'description:en'} = $request->input('en_description');
+        $category->{'name:kh'} = $request->input('kh_name');
+        $category->{'description:kh'} = $request->input('kh_description');
         $category->save();
         return redirect()->route('admin.categories.index')->with('success', 'The category has been created.');
     }
@@ -83,7 +87,7 @@ class CategoryController extends Controller
     public function edit(Category $category)
     {
         return view('admin.categories.edit', [
-            'category' => $category
+            'category' => $this->transformer->transform($category)
         ]);
     }
 
@@ -97,6 +101,10 @@ class CategoryController extends Controller
     public function update(UpdateRequest $request, Category $category)
     {
         $category->fill($request->all());
+        $category->{'name:en'} = $request->input('en_name');
+        $category->{'description:en'} = $request->input('en_description');
+        $category->{'name:kh'} = $request->input('kh_name');
+        $category->{'description:kh'} = $request->input('kh_description');
         $category->save();
         return redirect()->route('admin.categories.index')->with('success', 'The category has been updated.');
     }

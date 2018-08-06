@@ -3,13 +3,25 @@
 
     <!-- LOGO -->
     <div class="headerbar-left">
-        <a href="index.html" class="logo"><img alt="Logo" src="{!! asset('admin/images/logo.png') !!}"/> <span>Admin</span></a>
+        <a href="index.html" class="logo"><img alt="Logo" src="{!! asset('admin/images/logo.png') !!}"/>
+            <span>Admin</span></a>
     </div>
 
     <nav class="navbar-custom">
 
         <ul class="list-inline float-right mb-0">
-
+            <li class="list-inline-item dropdown notif">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    {{ app()->getLocale() }} <i class="fa fa-caret-down"></i>
+                </a>
+                <div class="dropdown-menu">
+                    @foreach (config('translatable.locales') as $lang => $language)
+                        @if ($lang != app()->getLocale())
+                            <a class="dropdown-item" href="{{ route('lang.switch', $lang) }}">{{ $language }}</a>
+                        @endif
+                    @endforeach
+                </div>
+            </li>
             <li class="list-inline-item dropdown notif">
                 <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" role="button"
                    aria-haspopup="false" aria-expanded="false">
@@ -113,7 +125,8 @@
                     <!-- item-->
                     <a href="#" class="dropdown-item notify-item">
                         <div class="notify-icon bg-faded">
-                            <img src="{!! asset('admin/images/avatars/avatar2.png') !!}" alt="img" class="rounded-circle img-fluid">
+                            <img src="{!! asset('admin/images/avatars/avatar2.png') !!}" alt="img"
+                                 class="rounded-circle img-fluid">
                         </div>
                         <p class="notify-details">
                             <b>John Doe</b>
@@ -125,7 +138,8 @@
                     <!-- item-->
                     <a href="#" class="dropdown-item notify-item">
                         <div class="notify-icon bg-faded">
-                            <img src="{!! asset('admin/images/avatars/avatar3.png') !!}" alt="img" class="rounded-circle img-fluid">
+                            <img src="{!! asset('admin/images/avatars/avatar3.png') !!}" alt="img"
+                                 class="rounded-circle img-fluid">
                         </div>
                         <p class="notify-details">
                             <b>Michael Cox</b>
@@ -137,7 +151,8 @@
                     <!-- item-->
                     <a href="#" class="dropdown-item notify-item">
                         <div class="notify-icon bg-faded">
-                            <img src="{!! asset('admin/images/avatars/avatar4.png') !!}" alt="img" class="rounded-circle img-fluid">
+                            <img src="{!! asset('admin/images/avatars/avatar4.png') !!}" alt="img"
+                                 class="rounded-circle img-fluid">
                         </div>
                         <p class="notify-details">
                             <b>Michelle Dolores</b>
@@ -157,7 +172,8 @@
             <li class="list-inline-item dropdown notif">
                 <a class="nav-link dropdown-toggle nav-user" data-toggle="dropdown" href="#" role="button"
                    aria-haspopup="false" aria-expanded="false">
-                    <img src="{!! asset('admin/images/avatars/admin.png') !!}" alt="Profile image" class="avatar-rounded">
+                    <img src="{!! asset('admin/images/avatars/admin.png') !!}" alt="Profile image"
+                         class="avatar-rounded">
                 </a>
                 <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                     <!-- item-->

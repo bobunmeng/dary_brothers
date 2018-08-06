@@ -211,6 +211,7 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
         'Alert' => UxWeb\SweetAlert\SweetAlert::class,
+        'Breadcrumbs' => \DaveJamesMiller\Breadcrumbs\Facades\Breadcrumbs::class,
     ],
 
 ];

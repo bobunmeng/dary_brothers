@@ -5,23 +5,27 @@
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
             <div class="card mb-3">
-                <div class="card-header">
-                    <h3><i class="fa fa-table"></i> Bordered table</h3>
-                    Add <i>.table-bordered</i> for borders on all sides of the table and cells.
-                    <a href="{!! route('admin.categories.create') !!}">
-                        New
-                    </a>
-                </div>
+                <header class="card-header">
+                    <div class="">
+                        <i class="fa fa-align-justify"></i>
+                        <strong>{!! __('fields.attributes.categories.title') !!}</strong>
+                        <div class="card-actions">
+                            <a href="{!! route('admin.categories.create') !!}">
+                                <small class="text-muted">{!! __('fields.attributes.categories.new') !!}</small>
+                            </a>
+                        </div>
+                    </div>
+                </header>
                 <div class="card-body">
                     <table class="table table-responsive-xl table-bordered table-hover" data-toggle="dataTable"
                            data-form="deleteForm">
                         <thead>
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Category name</th>
-                            <th scope="col">Description</th>
-                            <th scope="col">Status</th>
-                            <th scope="col">Action</th>
+                            <th scope="col">{!! __('fields.attributes.categories.name') !!}</th>
+                            <th scope="col">{!! __('fields.attributes.categories.description') !!}</th>
+                            <th scope="col">{!! __('fields.attributes.categories.status') !!}</th>
+                            <th scope="col">{!! __('fields.attributes.actions.action') !!}</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -34,12 +38,12 @@
                                 <td>
                                     <div class='btn-group'>
                                         <a href="{!! route('admin.categories.edit', $category->id) !!}"
-                                           class='btn btn-primary'
+                                           class='btn btn-primary btn-sm'
                                         >
                                             <i class="fa fa-edit"></i>
                                         </a>
                                         {!! Form::open(['route' => ['admin.categories.destroy', $category->id], 'method' => 'delete', 'class' => 'confirm']) !!}
-                                        {!! Form::button('<i class="fa fa-trash-o"></i>', ['type' => 'submit', 'class' => 'btn btn-danger confirm']) !!}
+                                        {!! Form::button('<i class="fa fa-trash-o"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-sm confirm']) !!}
                                         {!! Form::close() !!}
                                     </div>
                                 </td>

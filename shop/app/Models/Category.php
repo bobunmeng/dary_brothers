@@ -2,29 +2,17 @@
 
 namespace App\Models;
 
+use Dimsav\Translatable\Translatable;
 use Illuminate\Database\Eloquent\Model;
-use Spatie\Sluggable\HasSlug;
-use Spatie\Sluggable\SlugOptions;
 
 class Category extends Model
 {
-    use HasSlug;
+    use  Translatable;
 
-    protected $fillable = [
-        'name', 'description', 'slug', 'status'
-    ];
+    public $translatedAttributes = ['name', 'description', 'slug'];
+
+    protected $fillable = ['status'];
 
     protected $casts = ['status' => 'boolean'];
 
-    /**
-     * Get the options for generating the slug.
-     */
-    public function getSlugOptions(): SlugOptions
-    {
-        return SlugOptions::create()
-            ->generateSlugsFrom('name')
-            ->saveSlugsTo('slug')
-            ->usingLanguage('en')
-            ->doNotGenerateSlugsOnUpdate();
-    }
 }

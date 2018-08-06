@@ -16,8 +16,10 @@ class CategoryTransformer extends BaseTransformer
     {
         return [
             'id' => (int)$item->id,
-            'name' => (string)$item->name,
-            'description' => (string)$item->description,
+            'en_name' => (string)$item->translate('en')->name,
+            'kh_name' => (string)$item->translate('kh')->name,
+            'en_description' => (string)$item->translate('en')->description,
+            'kh_description' => (string)$item->translate('kh')->description,
             'status' => (boolean)$item->status
         ];
     }

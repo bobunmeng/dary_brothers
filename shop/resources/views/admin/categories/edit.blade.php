@@ -8,7 +8,7 @@
                     <h3><i class="fa fa-table"></i> Create Category</h3>
                 </div>
                 <div class="card-body">
-                    {!! Form::model($category, ['method' => 'PATCH','route' => ['admin.categories.update', $category->id]]) !!}
+                    {!! Form::model($category, ['method' => 'PATCH','route' => ['admin.categories.update', $category['id']]]) !!}
                     @include('admin.categories.fields')
                     {!! Form::close() !!}
                 </div>

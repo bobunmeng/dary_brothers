@@ -45,7 +45,7 @@
 
             <div class="container-fluid">
 
-                @include('layouts.breadcrumb')
+                {{ Breadcrumbs::render() }}
 
                 {{--<div class="alert alert-danger" role="alert">--}}
                 {{--<h4 class="alert-heading">Info!</h4>--}}

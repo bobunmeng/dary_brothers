@@ -3,7 +3,7 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2018-08-05 11:40:39.
+    * Generated on 2018-08-05 12:21:47.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
@@ -47,6 +47,7 @@ namespace PHPSTORM_META {
         'Spatie\MediaLibrary\Filesystem\Filesystem' => \Spatie\MediaLibrary\Filesystem\Filesystem::class,
         'Spatie\MediaLibrary\ResponsiveImages\WidthCalculator\WidthCalculator' => \Spatie\MediaLibrary\ResponsiveImages\WidthCalculator\FileSizeOptimizedWidthCalculator::class,
         'Spatie\MediaLibrary\ResponsiveImages\TinyPlaceholderGenerator\TinyPlaceholderGenerator' => \Spatie\MediaLibrary\ResponsiveImages\TinyPlaceholderGenerator\Blurred::class,
+        'Themsaid\Langman\Manager' => \Themsaid\Langman\Manager::class,
         'UxWeb\SweetAlert\SessionStore' => \UxWeb\SweetAlert\LaravelSessionStore::class,
         'uxweb.sweet-alert' => \UxWeb\SweetAlert\SweetAlertNotifier::class,
         'command.ide-helper.generate' => \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand::class,
@@ -198,6 +199,7 @@ namespace PHPSTORM_META {
         'Spatie\MediaLibrary\Filesystem\Filesystem' => \Spatie\MediaLibrary\Filesystem\Filesystem::class,
         'Spatie\MediaLibrary\ResponsiveImages\WidthCalculator\WidthCalculator' => \Spatie\MediaLibrary\ResponsiveImages\WidthCalculator\FileSizeOptimizedWidthCalculator::class,
         'Spatie\MediaLibrary\ResponsiveImages\TinyPlaceholderGenerator\TinyPlaceholderGenerator' => \Spatie\MediaLibrary\ResponsiveImages\TinyPlaceholderGenerator\Blurred::class,
+        'Themsaid\Langman\Manager' => \Themsaid\Langman\Manager::class,
         'UxWeb\SweetAlert\SessionStore' => \UxWeb\SweetAlert\LaravelSessionStore::class,
         'uxweb.sweet-alert' => \UxWeb\SweetAlert\SweetAlertNotifier::class,
         'command.ide-helper.generate' => \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand::class,
@@ -349,6 +351,7 @@ namespace PHPSTORM_META {
         'Spatie\MediaLibrary\Filesystem\Filesystem' => \Spatie\MediaLibrary\Filesystem\Filesystem::class,
         'Spatie\MediaLibrary\ResponsiveImages\WidthCalculator\WidthCalculator' => \Spatie\MediaLibrary\ResponsiveImages\WidthCalculator\FileSizeOptimizedWidthCalculator::class,
         'Spatie\MediaLibrary\ResponsiveImages\TinyPlaceholderGenerator\TinyPlaceholderGenerator' => \Spatie\MediaLibrary\ResponsiveImages\TinyPlaceholderGenerator\Blurred::class,
+        'Themsaid\Langman\Manager' => \Themsaid\Langman\Manager::class,
         'UxWeb\SweetAlert\SessionStore' => \UxWeb\SweetAlert\LaravelSessionStore::class,
         'uxweb.sweet-alert' => \UxWeb\SweetAlert\SweetAlertNotifier::class,
         'command.ide-helper.generate' => \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand::class,
@@ -500,6 +503,7 @@ namespace PHPSTORM_META {
         'Spatie\MediaLibrary\Filesystem\Filesystem' => \Spatie\MediaLibrary\Filesystem\Filesystem::class,
         'Spatie\MediaLibrary\ResponsiveImages\WidthCalculator\WidthCalculator' => \Spatie\MediaLibrary\ResponsiveImages\WidthCalculator\FileSizeOptimizedWidthCalculator::class,
         'Spatie\MediaLibrary\ResponsiveImages\TinyPlaceholderGenerator\TinyPlaceholderGenerator' => \Spatie\MediaLibrary\ResponsiveImages\TinyPlaceholderGenerator\Blurred::class,
+        'Themsaid\Langman\Manager' => \Themsaid\Langman\Manager::class,
         'UxWeb\SweetAlert\SessionStore' => \UxWeb\SweetAlert\LaravelSessionStore::class,
         'uxweb.sweet-alert' => \UxWeb\SweetAlert\SweetAlertNotifier::class,
         'command.ide-helper.generate' => \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand::class,
@@ -651,6 +655,7 @@ namespace PHPSTORM_META {
         'Spatie\MediaLibrary\Filesystem\Filesystem' => \Spatie\MediaLibrary\Filesystem\Filesystem::class,
         'Spatie\MediaLibrary\ResponsiveImages\WidthCalculator\WidthCalculator' => \Spatie\MediaLibrary\ResponsiveImages\WidthCalculator\FileSizeOptimizedWidthCalculator::class,
         'Spatie\MediaLibrary\ResponsiveImages\TinyPlaceholderGenerator\TinyPlaceholderGenerator' => \Spatie\MediaLibrary\ResponsiveImages\TinyPlaceholderGenerator\Blurred::class,
+        'Themsaid\Langman\Manager' => \Themsaid\Langman\Manager::class,
         'UxWeb\SweetAlert\SessionStore' => \UxWeb\SweetAlert\LaravelSessionStore::class,
         'uxweb.sweet-alert' => \UxWeb\SweetAlert\SweetAlertNotifier::class,
         'command.ide-helper.generate' => \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand::class,
@@ -802,6 +807,7 @@ namespace PHPSTORM_META {
         'Spatie\MediaLibrary\Filesystem\Filesystem' => \Spatie\MediaLibrary\Filesystem\Filesystem::class,
         'Spatie\MediaLibrary\ResponsiveImages\WidthCalculator\WidthCalculator' => \Spatie\MediaLibrary\ResponsiveImages\WidthCalculator\FileSizeOptimizedWidthCalculator::class,
         'Spatie\MediaLibrary\ResponsiveImages\TinyPlaceholderGenerator\TinyPlaceholderGenerator' => \Spatie\MediaLibrary\ResponsiveImages\TinyPlaceholderGenerator\Blurred::class,
+        'Themsaid\Langman\Manager' => \Themsaid\Langman\Manager::class,
         'UxWeb\SweetAlert\SessionStore' => \UxWeb\SweetAlert\LaravelSessionStore::class,
         'uxweb.sweet-alert' => \UxWeb\SweetAlert\SweetAlertNotifier::class,
         'command.ide-helper.generate' => \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand::class,
@@ -953,6 +959,7 @@ namespace PHPSTORM_META {
         'Spatie\MediaLibrary\Filesystem\Filesystem' => \Spatie\MediaLibrary\Filesystem\Filesystem::class,
         'Spatie\MediaLibrary\ResponsiveImages\WidthCalculator\WidthCalculator' => \Spatie\MediaLibrary\ResponsiveImages\WidthCalculator\FileSizeOptimizedWidthCalculator::class,
         'Spatie\MediaLibrary\ResponsiveImages\TinyPlaceholderGenerator\TinyPlaceholderGenerator' => \Spatie\MediaLibrary\ResponsiveImages\TinyPlaceholderGenerator\Blurred::class,
+        'Themsaid\Langman\Manager' => \Themsaid\Langman\Manager::class,
         'UxWeb\SweetAlert\SessionStore' => \UxWeb\SweetAlert\LaravelSessionStore::class,
         'uxweb.sweet-alert' => \UxWeb\SweetAlert\SweetAlertNotifier::class,
         'command.ide-helper.generate' => \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand::class,

@@ -11,6 +11,8 @@
 |
 */
 
+Route::get('lang/{language}', 'LanguageController@switchLang')->name('lang.switch');
+
 Auth::routes();
 
 Route::get('/', 'Frontend\HomeController@index')->name('fronted.home');
