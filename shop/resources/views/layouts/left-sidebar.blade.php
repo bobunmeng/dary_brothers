@@ -5,12 +5,12 @@
             <ul>
                 <li class="submenu">
                     <a class="active" href="{!! route('admin.home') !!}">
-                        <i class="fa fa-fw fa-bars"></i><span> Dashboard </span>
+                        <i class="fa fa-fw fa-bars"></i><span> {!! __('menu.dashboard') !!} </span>
                     </a>
                 </li>
                 <li class="submenu">
                     <a href="{!! route('admin.categories.index') !!}"><i class="fa fa-fw fa-area-chart"> </i>
-                        <span> Categories </span>
+                        <span> {!! __('menu.categories') !!} </span>
                     </a>
                 </li>
                 <li class="submenu">
