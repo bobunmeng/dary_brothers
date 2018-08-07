@@ -4,9 +4,9 @@ namespace App\Models;
 
 use Dimsav\Translatable\Translatable;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Category extends Model
+class Type extends Model
 {
     use  Translatable;
 
@@ -17,10 +17,10 @@ class Category extends Model
     protected $casts = ['status' => 'boolean'];
 
     /**
-     * @return BelongsToMany
+     * @return HasMany
      */
-    public function productions(): BelongsToMany
+    public function products(): HasMany
     {
-        return $this->belongsToMany(Product::class, 'product_categories', 'category_id', 'product_id')->withTimestamps();
+        return $this->hasMany(Product::class);
     }
 }

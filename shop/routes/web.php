@@ -25,4 +25,6 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
     Route::resource('categories', 'Admin\CategoryController');
 
+    Route::resource('types', 'Admin\TypeController');
+
 });

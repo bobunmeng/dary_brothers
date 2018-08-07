@@ -2,5 +2,6 @@
 
 return [
     'categories' => 'ប្រភេទ',
-    'dashboard' => 'ទំព័រដើម'
+    'dashboard' => 'ទំព័រដើម',
+    'types' => 'Type'
 ];

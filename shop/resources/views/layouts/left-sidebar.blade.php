@@ -14,6 +14,11 @@
                     </a>
                 </li>
                 <li class="submenu">
+                    <a href="{!! route('admin.types.index') !!}"><i class="fa fa-fw fa-area-chart"> </i>
+                        <span> {!! __('menu.types') !!} </span>
+                    </a>
+                </li>
+                <li class="submenu">
                     <a href="charts.html"><i class="fa fa-fw fa-area-chart"></i><span> Charts </span> </a>
                 </li>
                 <li class="submenu">

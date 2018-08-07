@@ -4,9 +4,10 @@ namespace App\Models;
 
 use Dimsav\Translatable\Translatable;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-class Category extends Model
+class Product extends Model
 {
     use  Translatable;
 
@@ -19,8 +20,16 @@ class Category extends Model
     /**
      * @return BelongsToMany
      */
-    public function productions(): BelongsToMany
+    public function categories(): BelongsToMany
     {
-        return $this->belongsToMany(Product::class, 'product_categories', 'category_id', 'product_id')->withTimestamps();
+        return $this->belongsToMany(Category::class, 'product_categories', 'product_id', 'category_id')->withTimestamps();
+    }
+
+    /**
+     * @return BelongsTo
+     */
+    public function type(): BelongsTo
+    {
+        return $this->belongsTo(Type::class);
     }
 }
